@@ -1,39 +1,17 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-void first(void);
-void printBeforeMain(void);
-
-/**
- * first - prints a sentence before the main
- * function is executed
- */
-void first(void)
+void printIntro() 
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
 }
 
-/**
- * printBeforeMain - function to be called before
- * program exit
- */
-void printBeforeMain(void)
+int main() 
 {
-	first();
-}
+	printIntro();
 
-/**
- * main - Entry point of the program
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-	atexit(printBeforeMain);
+	/* Rest of your main function code goes here */
 
-	printf("Main function\n");
-
-	return (0);
+	return 0;
 }
 
