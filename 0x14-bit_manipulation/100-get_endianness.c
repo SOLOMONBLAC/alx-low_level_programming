@@ -1,23 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
-void printNumbers(int n)
+/**
+ * get_endianness - checks if a machine is little or big endian
+ * Return: 0 for big, 1 for little
+ */
+int get_endianness(void)
 {
-	int i;
+	unsigned int i = 1;
+	char *c = (char *) &i;
 
-	for (i = 1; i <= n; i++)
-	{
-	printf("%d ", i);
-	}
-	printf("\n");
-}
-
-int main(void)
-{
-	int num;
-
-	printf("Enter a number: ");
-	scanf("%d", &num);
-	printNumbers(num);
-	return (0);
+	return (int)(*c);
 }
